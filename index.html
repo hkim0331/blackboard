@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blackboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="col-md-6">
+      <h3>in:</h3>
+      <form id="form">
+        <div class="form-group">
+          <textarea class="form-control" id="teacher" rows="12"></textarea>
+          <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h3>out:</h3>
+      <pre id="student"></pre>
+    </div>
+    <div class="col-md-12">
+      <hr>
+      hkimura, 2017-03-26.
+    </div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io();
+var form = document.getElementById('form');
+var teacher = document.getElementById('teacher');
+var student  = document.getElementById('student');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var message = teacher.value;
+  socket.emit('bb', message);
+  teacher.value = '';});
+
+socket.on('bb', function(e) {
+  student.innerHTML = '<code>'+ e + '</code>'});
+
+  document.getElementById('teacher').addEventListener('keydown', function (e) {
+    var elem, end, start, value;
+    if (e.keyCode === 9) {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      elem = e.target;
+      start = elem.selectionStart;
+      end = elem.selectionEnd;
+      value = elem.value;
+      elem.value = "" + (value.substring(0, start)) + "  " + (value.substring(end));
+      elem.selectionStart = elem.selectionEnd = start + 2;
+      return false;
+    }
+  });
+</script>
+</div>
+</body>
+</html>
