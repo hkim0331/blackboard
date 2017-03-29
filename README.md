@@ -19,6 +19,8 @@ nginx の下流に入れるなどして使おう。
 
 ## todo
 
+* shift+return でサブミット。
+* lambda, define, cond の入力スニペット。
 * textarea のフォントサイズを大きくしたい。
 * code を色付きで。
 * 入力あったデータをデータベースに保存。
