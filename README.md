@@ -12,13 +12,15 @@ node
 $ make init
 $ make start
 node app.js
-listening on 3000
+listening on 4002
 ```
 
 nginx の下流に入れるなどして使おう。
+ポート 4002 は app.js にハードコーディング。ダサい。
 
 ## todo
 
+* ゼミモード（誰でも上書きできる）とクラスルームモード（先生だけが上書きできる）。
 * shift+return でサブミット。
 * lambda, define, cond の入力スニペット。
 * textarea のフォントサイズを大きくしたい。
