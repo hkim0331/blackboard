@@ -1,0 +1,2 @@
+(cd /srv/blackboard && sudo -u hkim node app.js) &
+
