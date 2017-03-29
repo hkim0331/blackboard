@@ -11,4 +11,3 @@ start:
 
 clean:
 	${RM} *~
-
