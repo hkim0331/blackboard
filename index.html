@@ -23,11 +23,11 @@
 
     <div class="col-md-6">
       <h3>out:</h3>
-      <pre id="student"></pre>
+      <div id="student"></div>
     </div>
     <div class="col-md-12">
       <hr>
-      hkimura, 2017-03-26.
+      hkimura, 2017-03-26, 2017-03-29.
     </div>
 <script src="/socket.io/socket.io.js"></script>
 <script>
@@ -43,7 +43,7 @@ form.addEventListener('submit', function(e) {
   teacher.value = '';});
 
 socket.on('bb', function(e) {
-  student.innerHTML = '<code>'+ e + '</code>'});
+  student.innerHTML = '<pre><code>'+ escape_html(e) + '</code></pre>'});
 
   document.getElementById('teacher').addEventListener('keydown', function (e) {
     var elem, end, start, value;
@@ -60,6 +60,21 @@ socket.on('bb', function(e) {
       return false;
     }
   });
+  function escape_html (string) {
+  if(typeof string !== 'string') {
+    return string;
+  }
+  return string.replace(/[&'`"<>]/g, function(match) {
+    return {
+      '&': '&amp;',
+      "'": '&#x27;',
+      '`': '&#x60;',
+      '"': '&quot;',
+      '<': '&lt;',
+      '>': '&gt;',
+    }[match]
+  });
+  }
 </script>
 </div>
 </body>
