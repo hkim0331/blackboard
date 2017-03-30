@@ -36,4 +36,4 @@ nginx の下流に入れるなどして使おう。
 * (bbs を mt などに改名する)
 
 ---
-hkimura, release 0.4, 2017-03-30
+hkimura, release 0.4.2, 2017-03-30

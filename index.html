@@ -31,7 +31,7 @@
 
     <div class="col-md-12">
       <hr>
-      hkimura, release 0.4, 2017-03-30.
+      hkimura, release 0.4.2, 2017-03-30.
     </div>
 
 <script src="/socket.io/socket.io.js"></script>
@@ -68,13 +68,13 @@ teacher.addEventListener('keydown', function (e) {
   if (e.keyCode === 9) {
     insert(e, "  ");
   } else if (e.keyCode === 67 && e.altKey) {
-    insert(e, "cond ");
+    insert(e, "(cond ");
   } else if (e.keyCode === 68 && e.altKey) {
-    insert(e, "define ");
+    insert(e, "(define ");
   } else if (e.keyCode === 69 && e.altKey) { // why not?
-    insert(e, "else ");
+    insert(e, "(else ");
   } else if (e.keyCode === 76 && e.altKey) {
-    insert(e, "lambda ");
+    insert(e, "(lambda ");
   } else if (e.keyCode === 13 && e.shiftKey) {
     e.preventDefault();
     socketEmit(e);
