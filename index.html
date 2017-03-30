@@ -53,25 +53,33 @@ form.addEventListener('submit', function(e) {
   socketEmit(e);
 });
 
-teacher.addEventListener('keydown', function (e) {
+function insert(e, string) {
+  e.preventDefault();
   var elem, end, start, value;
-  //tab
-  if (e.keycode === 9) {
-    if (e.preventDefault) {
-      e.preventDefault();
-    }
-    elem = e.target;
-    start = elem.selectionStart;
-    end = elem.selectionEnd;
-    value = elem.value;
-    elem.value = "" + (value.substring(0, start)) + "  " + (value.substring(end));
-    elem.selectionStart = elem.selectionEnd = start + 2;
-    return false;
+  elem = e.target;
+  start = elem.selectionStart;
+  end = elem.selectionEnd;
+  value = elem.value;
+  elem.value = "" + (value.substring(0, start)) + string + (value.substring(end));
+  elem.selectionStart = elem.selectionEnd = start + string.length();
+}
+
+teacher.addEventListener('keydown', function (e) {
+  if (e.keyCode === 9) {
+    insert(e, "  ");
+  } else if (e.keyCode === 67 && e.altKey) {
+    insert(e, "cond ");
+  } else if (e.keyCode === 68 && e.altKey) {
+    insert(e, "define ");
+  } else if (e.keyCode === 69 && e.altKey) { // why not?
+    insert(e, "else ");
+  } else if (e.keyCode === 76 && e.altKey) {
+    insert(e, "lambda ");
   } else if (e.keyCode === 13 && e.shiftKey) {
+    e.preventDefault();
     socketEmit(e);
   }
 });
-
 
 function escape_html (string) {
   return string.replace(/[&'`"<>]/g, function(match) {
