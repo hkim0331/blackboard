@@ -33,7 +33,9 @@ for i in ${FILES}; do
     ${SED} -i.bak "s/hkimura.*$/hkimura, release ${VERSION}, ${TODAY}./" $i
 done
 
-# example of sed 'c' command.
 ${SED} -i.bak "s/\"version\":.*$/\"version\": \"${VERSION}\",/" package.json
+
+${SED} -i.bak "/^hkimura, release/ c\
+hkimura, release ${VERSION}, ${TODAY}" README.md
 
 echo ${VERSION} > VERSION

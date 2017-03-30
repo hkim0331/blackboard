@@ -4,7 +4,9 @@
 
 ## require
 
-node
+* node
+* npm
+* express, socket.io
 
 ## usage
 
@@ -21,7 +23,6 @@ nginx の下流に入れるなどして使おう。
 ## todo
 
 * ゼミモード（誰でも上書きできる）とクラスルームモード（先生だけが上書きできる）。
-* shift+return でサブミット。
 * lambda, define, cond の入力スニペット。
 * textarea のフォントサイズを大きくしたい。
 * code を色付きで。
@@ -30,8 +31,9 @@ nginx の下流に入れるなどして使おう。
 
 ## done
 
+* shift+return でサブミット。
 * HTML エスケープ
 * (bbs を mt などに改名する)
 
 ---
-hkimura, 2017-03-26, 2017-03-29.
+hkimura, release 0.4, 2017-03-30

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>blackboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- 
+  <!--
   <link rel="stylesheet" href="style.css">
   -->
 </head>
@@ -55,7 +55,8 @@ form.addEventListener('submit', function(e) {
 
 teacher.addEventListener('keydown', function (e) {
   var elem, end, start, value;
-  if (e.keyCode === 9) {
+  //tab
+  if (e.keycode === 9) {
     if (e.preventDefault) {
       e.preventDefault();
     }
