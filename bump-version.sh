@@ -23,10 +23,6 @@ if [ -z ${SED} ]; then
 fi
 
 FILES="index.html"
-# filtering FILES is a good idea.
-#FILES="*.lisp *.rb *.c"
-
-# example, skip *.bak files
 for i in ${FILES}; do
     if [ ./$i = $0 ]; then
         continue
@@ -38,7 +34,6 @@ for i in ${FILES}; do
 done
 
 # example of sed 'c' command.
-#${SED} -i.bak "/(defvar \*version\*/ c\
-#(defvar *version* \"${VERSION}\")" *.lisp
+${SED} -i.bak "s/\"version\":.*$/\"version\": \"${VERSION}\",/" package.json
 
 echo ${VERSION} > VERSION
