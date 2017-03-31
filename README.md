@@ -20,20 +20,22 @@ listening on 4002
 nginx の下流に入れるなどして使おう。
 ポート 4002 は app.js にハードコーディング。ダサい。
 
-## todo
+## FIXME
 
+* js スクリプトを別ファイルとすると動かないのはなぜ？
+* else が入らない。
 * ゼミモード（誰でも上書きできる）とクラスルームモード（先生だけが上書きできる）。
-* lambda, define, cond の入力スニペット。
 * textarea のフォントサイズを大きくしたい。
 * code を色付きで。
 * 入力あったデータをデータベースに保存。
 * port を引数で取りたいぞ。
 
-## done
+## FIXED
 
+* lambda, define, cond の入力スニペット。
 * shift+return でサブミット。
 * HTML エスケープ
-* (bbs を mt などに改名する)
+* bbs のプロジェクト名を micro-twitter に改名、mt.melt.kyutech.ac.jp でサービス。
 
 ---
 hkimura, release 0.4.2, 2017-03-30

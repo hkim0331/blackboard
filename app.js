@@ -5,6 +5,9 @@ const io = require('socket.io')(server);
 app.get('/',(req,res) => {
     res.sendFile(__dirname + "/index.html");});
 
+app.get('/2',(req,res) => {
+    res.sendFile(__dirname + "/index2.html");});
+
 io.on('connection',(socket) => {
     socket.on('bb',(msg) => {
         io.emit('bb',msg); });});
