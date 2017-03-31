@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blackboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--
+  <link rel="stylesheet" href="style.css">
+  -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="col-md-6">
+      <h3>out:</h3>
+      <div id="student"></div>
+    </div>
+
+    <div class="col-md-6">
+      <h3>in:</h3>
+      <form id="form">
+        <div class="form-group">
+          <textarea class="form-control" id="teacher" rows="12"></textarea>
+          <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-12">
+      <hr>
+      hkimura, release 0.4.2, 2017-03-31.
+    </div>
+</div>
+</body>
+</html>
