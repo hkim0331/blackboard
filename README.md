@@ -16,6 +16,7 @@ $ make start
 ## todo
 
 * textarea のフォントサイズを大きくしたい。
+* submit できるユーザを制限する。
 
 ---
 hkimura, 2017-03-26.
