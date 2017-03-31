@@ -10,7 +10,6 @@ io.on('connection',(socket) => {
         io.emit('bb',msg); });});
 
 server.on('listening',() => {
-    console.log('listening on 3000');});
+    console.log('listening on 4002');});
 
-server.listen(3000);
-
+server.listen(4002);

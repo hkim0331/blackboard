@@ -10,5 +10,4 @@ start:
 	node app.js
 
 clean:
-	${RM} *~
-
+	${RM} *~ *.bak
