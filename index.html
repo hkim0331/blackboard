@@ -30,6 +30,16 @@
     </div>
 
     <div class="col-md-12">
+
+      <h3>note</h3>
+      <ul>
+        <li>TAB ... SPC*2</li>
+        <li>opt+d ... (define</li>
+        <li>opt+l ... (lambda (</li>
+        <li>opt+c ... (cond </li>
+        <li>shift+return ... [submit]</li>
+      </ul>
+
       <hr>
       hkimura, release 0.4.2, 2017-03-30.
     </div>
@@ -74,7 +84,7 @@ teacher.addEventListener('keydown', function (e) {
   } else if (e.keyCode === 69 && e.altKey) { // why not?
     insert(e, "(else ");
   } else if (e.keyCode === 76 && e.altKey) {
-    insert(e, "(lambda ");
+    insert(e, "(lambda (");
   } else if (e.keyCode === 13 && e.shiftKey) {
     e.preventDefault();
     socketEmit(e);
