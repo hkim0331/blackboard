@@ -77,6 +77,8 @@ function insert(e, string) {
 teacher.addEventListener('keydown', function (e) {
   if (e.keyCode === 9) {
     insert(e, "  ");
+  } else if (e.keyCode === 63 && e.altKey) {
+    insert(e, "(atom? ");
   } else if (e.keyCode === 67 && e.altKey) {
     insert(e, "(cond ");
   } else if (e.keyCode === 68 && e.altKey) {
@@ -85,6 +87,8 @@ teacher.addEventListener('keydown', function (e) {
     insert(e, "(else ");
   } else if (e.keyCode === 76 && e.altKey) {
     insert(e, "(lambda (");
+  } else if (e.keyCode === 78 && e.altkey) {
+    insert(e, "(null? ");
   } else if (e.keyCode === 13 && e.shiftKey) {
     e.preventDefault();
     socketEmit(e);
