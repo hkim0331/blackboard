@@ -40,4 +40,4 @@ nginx の下流に入れるなどして使おう。
 * bbs のプロジェクト名を micro-twitter に改名、mt.melt.kyutech.ac.jp でサービス。
 
 ---
-hkimura, release 0.4.2, 2017-03-30
+hkimura, release 0.4.3, 2017-04-12
